@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light">
+<html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,20 +8,26 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./assets/profile.png" type="image/png">
-    <script src='script.js'></script>
+
 </head>
 <body>
-        <header>
-            <button>
-            </button>
-            <span></span>
-        </header>
         <div id="container">
             <img src="assets/profile.png" alt="" id="profile">
+            <div id="switch" onclick="toggleMode()">
+                <button>
+                </button>
+                <span></span>
+            </div>
             <ul>
-                <li><i class="ri-youtube-fill"></i><strong>Canal no youtube</strong></li>
-                <li><i class="ri-twitch-fill"></i><strong>Canal na twitch</strong></li>
-                <li><i class="ri-discord-fill"></i><strong>Server no discord</strong></li>
+                <a href="https://www.youtube.com/channel/UCAzSd9h_oynSrvmATkUaZtg" target="_blank">
+                    <li><i class="ri-youtube-fill"></i><strong>Canal no youtube</strong></li>
+                </a>
+                <a href="https://www.twitch.tv/drthardy" target="_blank">
+                    <li><i class="ri-twitch-fill"></i><strong>Canal na twitch</strong></li>
+                </a>
+                <a href="https://discord.gg/QAsaU3Hr" target="_blank">
+                    <li><i class="ri-discord-fill"></i><strong>Server no discord</strong></li>
+                </a>
             </ul>
             <div id="social">
                 <a href="https://instagram.com/_thardely/" target="_blank"><i class="ri-instagram-fill"></i></a><a href="https://github.com/dyegot/" target="_blank"><i class="ri-github-fill"></i></a><a href="#"><i class="ri-linkedin-box-fill"></i></a>
@@ -30,7 +36,7 @@
                 <p>© Diretos reservados  by <strong>Dyego Thardely</strong></p>
             </footer>
         </div>
-
+        <script src='script.js'></script>
        
 </body>
 </html>

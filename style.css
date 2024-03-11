@@ -3,8 +3,27 @@
     padding: 0;
 }
 
+:root{
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --text-color: #ffffff;
+    --bg-color: rgba(255, 255, 255, 0.25);
+    --border-color: 1px solid #ff0000;
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light{
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --text-color: #000000;
+    --bg-color: rgba(0, 0, 0, 0.25);
+    --border-color: 1px solid #04FCF9;
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --highlight-color: rgba(0, 0, 0, 0.2);
+}
+
 body{
-    height: 100vh;
     width: 100vw;
     background: var(--bg-url) no-repeat top center/cover;
 }
@@ -14,18 +33,45 @@ body *{
     color: var(--text-color);
 }
 
-:root{
-    --bg-url: url(./assets/bg-mobile.jpg);
-    --text-color: #ffffff;
-    --bg-color: rgba(255, 255, 255, 0.25);
-    --border-color: 1px solid #ff0000;
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 0 auto 20px auto;
+    cursor: pointer;
 }
 
-.light{
-    --bg-url: url(./assets/bg-mobile-light.jpg);
-    --text-color: #000000;
-    --bg-color: rgba(0, 0, 0, 0.25);
-    --border-color: 1px solid #04FCF9;
+#switch > span{
+    width: 64px;
+    height: 24px;
+    display: block;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+#switch > button{
+    width: 32px;
+    height: 32px;
+    background: var(--text-color) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    cursor: pointer;
+    animation: slide-out 0.2s;
+}
+
+.light #switch > button{
+    animation: slide-in 0.4s forwards;
+}
+
+.switch > button:hover{
+    outline: 8px solid var(--highlight-color);
 }
 
 #container{
@@ -50,7 +96,7 @@ ul{
     gap: 10px;
 }
 
-ul > li{
+ul > a > li{
     background: var(--bg-color);
     list-style: none;
     width: 15vw;
@@ -62,11 +108,17 @@ ul > li{
     flex-direction: row;
     border-radius: 50px;
     border: var(--border-color);
+    text-decoration: none;
 }
 
-ul > li > i{
+ul > a > li > i{
     margin-right: 5px;
     font-size: 20px;
+    text-decoration: none;
+}
+
+ul > a{
+    text-decoration: none;
 }
 
 #social{
@@ -108,5 +160,23 @@ ul > li > i{
         width: 45vw;
         flex-direction: column;
         padding: 16px 25px;
+    }
+}
+
+@keyframes slide-in{
+    from{
+        left: 0;
+    }
+    to{
+        left: 54%;
+    }
+}
+
+@keyframes slide-out{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }

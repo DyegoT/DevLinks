@@ -178,7 +178,7 @@ ul > a{
 
 }
 
-@media (max-width: 1063px){
+@media (width <= 1063px){
     ul > li{
         text-align: center;
         display: flex;
